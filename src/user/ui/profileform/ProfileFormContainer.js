@@ -4,16 +4,17 @@ import { updateUser } from './ProfileFormActions'
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    name: state.user.data.name
+    name: state.user.data.name,
+    web3: state.web3
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onProfileFormSubmit: (name) => {
+    onProfileFormSubmit: (name, web3) => {
       event.preventDefault();
 
-      dispatch(updateUser(name))
+      dispatch(updateUser(name, web3))
     }
   }
 }

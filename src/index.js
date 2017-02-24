@@ -16,7 +16,7 @@ import Profile from './user/layouts/profile/Profile';
 import store from './store';
 
 // Config
-import truffleConfig from './../truffle-config.js'
+//import truffleConfig from './../truffle-config.js'
 
 const history = syncHistoryWithStore(browserHistory, store)
 

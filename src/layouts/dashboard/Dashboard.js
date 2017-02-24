@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 class Dashboard extends Component {
   render() {
     const { authData } = this.props
-
     return(
       <main className="container">
         <div className="pure-g">

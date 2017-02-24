@@ -5,7 +5,8 @@ class ProfileForm extends Component {
     super(props)
 
     this.state = {
-      name: this.props.name
+      name: this.props.name,
+      web3: this.props.web3
     }
   }
 
@@ -21,7 +22,7 @@ class ProfileForm extends Component {
       return alert('Please fill in your name.')
     }
 
-    this.props.onProfileFormSubmit(this.state.name)
+    this.props.onProfileFormSubmit(this.state.name, this.state.web3.web3)
   }
 
   render() {

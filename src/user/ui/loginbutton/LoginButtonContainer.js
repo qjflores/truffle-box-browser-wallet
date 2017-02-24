@@ -3,15 +3,16 @@ import LoginButton from './LoginButton'
 import { loginUser } from './LoginButtonActions'
 
 const mapStateToProps = (state, ownProps) => {
-  return {}
+  return {
+    web3:state.web3
+  }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onLoginUserClick: (event) => {
+    onLoginUserClick: (web3) => {
       event.preventDefault();
-
-      dispatch(loginUser())
+      dispatch(loginUser(web3))
     }
   }
 }

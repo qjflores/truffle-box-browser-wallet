@@ -3,15 +3,17 @@ import SignUpForm from './SignUpForm'
 import { signUpUser } from './SignUpFormActions'
 
 const mapStateToProps = (state, ownProps) => {
-  return {}
+  return {
+    web3: state.web3
+  }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onSignUpFormSubmit: (name) => {
+    onSignUpFormSubmit: (name, web3) => {
       event.preventDefault();
 
-      dispatch(signUpUser(name))
+      dispatch(signUpUser(name, web3))
     }
   }
 }

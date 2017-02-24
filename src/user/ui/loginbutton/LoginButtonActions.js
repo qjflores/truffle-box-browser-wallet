@@ -1,9 +1,6 @@
-import Web3 from 'web3'
 import AuthenticationContract from '../../../../build/contracts/Authentication.json'
 import { browserHistory } from 'react-router'
 
-const provider = new Web3.providers.HttpProvider('http://localhost:8545')
-const web3 = new Web3(provider)
 const contract = require('truffle-contract')
 
 export const USER_LOGGED_IN = 'USER_LOGGED_IN'
@@ -14,11 +11,11 @@ function userLoggedIn(user) {
   }
 }
 
-export function loginUser() {
+export function loginUser(web3) {
   return function(dispatch) {
     // Using truffle-contract we create the authentication object.
     const authentication = contract(AuthenticationContract)
-    authentication.setProvider(provider)
+    authentication.setProvider(web3.currentProvider)
 
     // Declaring this for later so we can chain functions on Authentication.
     var authenticationInstance

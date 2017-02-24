@@ -45,6 +45,33 @@ All truffle boxes come with Truffle, Webpack and React. This box adds react-rout
     npm run build
     ```
 
+## Passing web3 to components through the Redux store
+
+1. Define web3 in your mapStateToProps function in your container component.
+    ```
+        const mapStateToProps = (state, ownProps) => {
+      return {
+        web3: state.web3
+      }
+    }
+    ```
+
+2. In your mapDispatchToProps of your container component, pass web3 into the function that you pass as a prop to your presentation component 
+    ```
+    const mapDispatchToProps = (dispatch) => {
+      return {
+        onSignUpFormSubmit: (name, web3) => {
+          event.preventDefault();
+
+          dispatch(signUpUser(name, web3))
+        }
+      }
+    }
+    ```
+
+3. In the presentation component, set web3 in the state within the constructor function.
+
+
 ## FAQ
 
 * __Why is there both a truffle.js file and a truffle-config.js file?__

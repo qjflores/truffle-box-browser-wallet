@@ -1,3 +1,7 @@
+I won't be maintaining this repo anymore because truffle box has published a react-redux truffle box. You should use that one.
+
+https://github.com/truffle-box/react-auth-box
+
 # Truffle Box (React, Redux and Authentication)
 
 All truffle boxes come with Truffle, Webpack and React. This box adds react-router, redux and redux-auth-wrapper for authentication powered by a smart contract. Great for building your own auth system.
